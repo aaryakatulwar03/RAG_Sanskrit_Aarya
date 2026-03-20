@@ -66,7 +66,7 @@ RAG_Sanskrit_Aarya/
 
 
 
---Technologies Used
+Technologies Used
 
 Python
 
@@ -82,8 +82,7 @@ mT5-small
 
 VS Code
 
---Models Used
-
+Models Used
 Embedding Model
 
 sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
@@ -110,8 +109,7 @@ Answer Fallback
 
 If the generator output is weak or unusable, the system uses a simple extractive fallback approach to return the most relevant sentence from the retrieved context.
 
---How the System Works
-
+How the System Works
 Step 1: Document Loading
 
 The system reads Sanskrit .txt files from the data/ folder.
@@ -159,6 +157,7 @@ Installation and Setup
 Place the project folder on your system.
 
 2. Create a virtual environment
+
 python -m venv venv
 3. Activate the virtual environment
 On Windows PowerShell
@@ -317,7 +316,6 @@ add a web interface using Streamlit
 
 support more Sanskrit documents and larger corpora
 
-
 Conclusion
 
 This project successfully implements a CPU-only Sanskrit RAG pipeline using document retrieval, FAISS indexing, multilingual embeddings, and lightweight answer generation with extractive fallback.
@@ -326,5 +324,3 @@ The system is modular, functional, and suitable as a beginner-friendly implement
 Author
 
 Aarya Katulwar
-
-
