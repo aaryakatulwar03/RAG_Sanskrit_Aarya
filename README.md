@@ -51,6 +51,7 @@ RAG_Sanskrit_Aarya/
    └── app.py
 
 ├── data/
+
    ├── story1.txt
 
    ├── story2.txt
@@ -64,10 +65,10 @@ RAG_Sanskrit_Aarya/
 ├── outputs/
 
    └── faiss_index/
-
-       ├── index.faiss
-
-       └── index.pkl
+   
+   ├── index.faiss
+   
+   └── index.pkl
 
 ├── reports/
 
@@ -84,6 +85,8 @@ RAG_Sanskrit_Aarya/
 └── .gitignore
 
 
+
+
 --Technologies Used
 Python
 LangChain
@@ -92,6 +95,7 @@ Sentence Transformers
 Hugging Face Transformers
 mT5-small
 VS Code
+
 
 --Models Used:
 1. Embedding Model
@@ -112,7 +116,9 @@ Answer Fallback
 
 If the generator output is weak or unusable, the system uses a simple extractive fallback approach to return the most relevant sentence from the retrieved context.
 
+
 ------
+
 
 --How the System Works:
 
@@ -155,18 +161,27 @@ Step 7: Answer Generation
 The system tries to generate an answer using the generator model.
 If the generated answer is weak, it uses extractive fallback from the retrieved context.
 
-Installation and Setup
+
+
+--Installation and Setup
 1. Clone or download the project
 
 Place the project folder on your system.
 
 2. Create a virtual environment
+
 python -m venv venv
-3. Activate the virtual environment
+
+3. Activate the virtual 
+
 On Windows PowerShell
+
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
 venv\Scripts\Activate.ps1
+
 On Command Prompt
+
 venv\Scripts\activate.bat
 
 4. Install dependencies
@@ -175,6 +190,8 @@ pip install -r requirements.txt
 If required, also install:
 
 pip install sentencepiece protobuf
+
+
 
 --How to Run the Project
 
@@ -227,7 +244,11 @@ Output
 
 The answer is generated from the retrieved context or extracted from it.
 
-Important Files
+
+
+--Important Files
+
+
 config.py
 
 Stores settings such as:
@@ -296,7 +317,10 @@ retrieves chunks
 
 returns final answer
 
+
+
 --Current Limitations
+
 
 The generator model is lightweight and CPU-friendly, so answer quality is not always perfect
 
@@ -308,7 +332,10 @@ Retrieval is good, but top retrieved chunks may sometimes include less relevant 
 
 Transliteration support is not separately implemented as a dedicated module
 
+
+
 --Future Improvements
+
 
 use a stronger Sanskrit-aware or multilingual QA model
 
@@ -321,6 +348,8 @@ improve answer extraction logic
 add a web interface using Streamlit
 
 support more Sanskrit documents and larger corpora
+
+
 
 --Conclusion
 
