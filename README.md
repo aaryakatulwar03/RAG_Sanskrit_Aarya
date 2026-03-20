@@ -33,41 +33,42 @@ The objective of this project is to build an end-to-end Sanskrit document questi
 ## Project Structure
 
 RAG_Sanskrit_Aarya/
-│
+
 ├── code/
-│   ├── config.py
 
-│   ├── preprocess.py
+   ├── config.py
 
-│   ├── build_index.py
+   ├── preprocess.py
 
-│   ├── query_system.py
+   ├── build_index.py
 
-│   ├── generator.py
+   ├── query_system.py
 
-│   ├── utils.py
+   ├── generator.py
 
-│   └── app.py
-│
+   ├── utils.py
+
+   └── app.py
+
 ├── data/
-│   ├── story1.txt
+   ├── story1.txt
 
-│   ├── story2.txt
+   ├── story2.txt
 
-│   ├── story3.txt
+   ├── story3.txt
 
-│   ├── story4.txt
+   ├── story4.txt
 
-│   └── story5.txt
-│
+   └── story5.txt
+
 ├── outputs/
 
-│   └── faiss_index/
+   └── faiss_index/
 
-│       ├── index.faiss
+       ├── index.faiss
 
-│       └── index.pkl
-│
+       └── index.pkl
+
 ├── reports/
 
 ├── screenshots/
@@ -113,7 +114,8 @@ If the generator output is weak or unusable, the system uses a simple extractive
 
 ------
 
-How the System Works:
+--How the System Works:
+
 Step 1: Document Loading
 
 The system reads Sanskrit .txt files from the data/ folder.
@@ -173,7 +175,9 @@ pip install -r requirements.txt
 If required, also install:
 
 pip install sentencepiece protobuf
-How to Run the Project
+
+--How to Run the Project
+
 Step 1: Build the FAISS index
 
 Run:
@@ -200,7 +204,7 @@ python code/app.py
 
 Then enter your question when prompted.
 
-Example Queries
+--Example Queries
 
 You can test with queries like:
 
@@ -292,7 +296,7 @@ retrieves chunks
 
 returns final answer
 
-Current Limitations
+--Current Limitations
 
 The generator model is lightweight and CPU-friendly, so answer quality is not always perfect
 
@@ -304,7 +308,7 @@ Retrieval is good, but top retrieved chunks may sometimes include less relevant 
 
 Transliteration support is not separately implemented as a dedicated module
 
-Future Improvements
+--Future Improvements
 
 use a stronger Sanskrit-aware or multilingual QA model
 
@@ -318,7 +322,7 @@ add a web interface using Streamlit
 
 support more Sanskrit documents and larger corpora
 
-Conclusion
+--Conclusion
 
 This project successfully implements a CPU-only Sanskrit RAG pipeline using document retrieval, FAISS indexing, multilingual embeddings, and lightweight answer generation with extractive fallback.
 The system is modular, functional, and suitable as a beginner-friendly implementation of a Sanskrit document QA system.
