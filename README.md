@@ -66,6 +66,11 @@ RAG_Sanskrit_Aarya/
 
 
 
+
+
+
+
+
 ## Technologies Used
 
 Python
