@@ -32,96 +32,82 @@ The objective of this project is to build an end-to-end Sanskrit document questi
 
 ## Project Structure
 
+```text
 RAG_Sanskrit_Aarya/
-
+│
 ├── code/
-
-   ├── config.py
-
-   ├── preprocess.py
-
-   ├── build_index.py
-
-   ├── query_system.py
-
-   ├── generator.py
-
-   ├── utils.py
-
-   └── app.py
-
+│   ├── config.py
+│   ├── preprocess.py
+│   ├── build_index.py
+│   ├── query_system.py
+│   ├── generator.py
+│   ├── utils.py
+│   └── app.py
+│
 ├── data/
-
-   ├── story1.txt
-
-   ├── story2.txt
-
-   ├── story3.txt
-
-   ├── story4.txt
-
-   └── story5.txt
-
+│   ├── story1.txt
+│   ├── story2.txt
+│   ├── story3.txt
+│   ├── story4.txt
+│   └── story5.txt
+│
 ├── outputs/
-
-   └── faiss_index/
-   
-   ├── index.faiss
-   
-   └── index.pkl
-
+│   └── faiss_index/
+│       ├── index.faiss
+│       └── index.pkl
+│
 ├── reports/
-
 ├── screenshots/
-
 ├── notebooks/
-
 ├── models/
-
 ├── README.md
-
 ├── requirements.txt
-
 └── .gitignore
 
+Technologies Used
 
-
-
---Technologies Used
 Python
+
 LangChain
+
 FAISS
+
 Sentence Transformers
+
 Hugging Face Transformers
+
 mT5-small
+
 VS Code
 
-
---Models Used:
-1. Embedding Model
+Models Used
+Embedding Model
 
 sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
 Reason:
-multilingual support, lightweight, suitable for CPU-based retrieval
 
-2. Generator Model:
+multilingual support
+
+lightweight
+
+suitable for CPU-based retrieval
+
+Generator Model
 
 google/mt5-small
 
 Reason:
-multilingual sequence-to-sequence model, better suited than English-only lightweight models for Sanskrit-related text
+
+multilingual sequence-to-sequence model
+
+better suited than English-only lightweight models for Sanskrit-related text
 
 Answer Fallback
 
 If the generator output is weak or unusable, the system uses a simple extractive fallback approach to return the most relevant sentence from the retrieved context.
 
-
-------
-
-
---How the System Works:
-
+How the System Works
 Step 1: Document Loading
 
 The system reads Sanskrit .txt files from the data/ folder.
@@ -141,7 +127,9 @@ Step 3: Chunking
 Documents are split into smaller chunks using RecursiveCharacterTextSplitter.
 
 Current settings:
+
 Chunk size: 500
+
 Chunk overlap: 80
 
 Step 4: Embedding Creation
@@ -161,40 +149,26 @@ Step 7: Answer Generation
 The system tries to generate an answer using the generator model.
 If the generated answer is weak, it uses extractive fallback from the retrieved context.
 
-
-
---Installation and Setup
+Installation and Setup
 1. Clone or download the project
 
 Place the project folder on your system.
 
 2. Create a virtual environment
-
 python -m venv venv
-
-3. Activate the virtual 
-
+3. Activate the virtual environment
 On Windows PowerShell
-
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-
 venv\Scripts\Activate.ps1
-
 On Command Prompt
-
 venv\Scripts\activate.bat
-
 4. Install dependencies
 pip install -r requirements.txt
 
 If required, also install:
 
 pip install sentencepiece protobuf
-
-
-
---How to Run the Project
-
+How to Run the Project
 Step 1: Build the FAISS index
 
 Run:
@@ -221,7 +195,7 @@ python code/app.py
 
 Then enter your question when prompted.
 
---Example Queries
+Example Queries
 
 You can test with queries like:
 
@@ -244,11 +218,7 @@ Output
 
 The answer is generated from the retrieved context or extracted from it.
 
-
-
---Important Files
-
-
+Important Files
 config.py
 
 Stores settings such as:
@@ -317,10 +287,7 @@ retrieves chunks
 
 returns final answer
 
-
-
---Current Limitations
-
+Current Limitations
 
 The generator model is lightweight and CPU-friendly, so answer quality is not always perfect
 
@@ -332,10 +299,7 @@ Retrieval is good, but top retrieved chunks may sometimes include less relevant 
 
 Transliteration support is not separately implemented as a dedicated module
 
-
-
---Future Improvements
-
+Future Improvements
 
 use a stronger Sanskrit-aware or multilingual QA model
 
@@ -350,8 +314,13 @@ add a web interface using Streamlit
 support more Sanskrit documents and larger corpora
 
 
-
---Conclusion
+Conclusion
 
 This project successfully implements a CPU-only Sanskrit RAG pipeline using document retrieval, FAISS indexing, multilingual embeddings, and lightweight answer generation with extractive fallback.
 The system is modular, functional, and suitable as a beginner-friendly implementation of a Sanskrit document QA system.
+
+Author
+
+Aarya Katulwar
+
+
