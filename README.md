@@ -65,10 +65,7 @@ RAG_Sanskrit_Aarya/
 └── .gitignore
 
 
-
-
-
-
+---
 
 
 ## Technologies Used
