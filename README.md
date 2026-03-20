@@ -36,31 +36,50 @@ RAG_Sanskrit_Aarya/
 │
 ├── code/
 │   ├── config.py
+
 │   ├── preprocess.py
+
 │   ├── build_index.py
+
 │   ├── query_system.py
+
 │   ├── generator.py
+
 │   ├── utils.py
+
 │   └── app.py
 │
 ├── data/
 │   ├── story1.txt
+
 │   ├── story2.txt
+
 │   ├── story3.txt
+
 │   ├── story4.txt
+
 │   └── story5.txt
 │
 ├── outputs/
+
 │   └── faiss_index/
+
 │       ├── index.faiss
+
 │       └── index.pkl
 │
 ├── reports/
+
 ├── screenshots/
+
 ├── notebooks/
+
 ├── models/
+
 ├── README.md
+
 ├── requirements.txt
+
 └── .gitignore
 
 
