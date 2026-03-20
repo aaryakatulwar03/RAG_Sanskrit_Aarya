@@ -32,6 +32,41 @@ The objective of this project is to build an end-to-end Sanskrit document questi
 
 ## Project Structure
 
+# Sanskrit RAG System
+
+## Project Overview
+This project is a CPU-only Retrieval-Augmented Generation (RAG) system built for Sanskrit documents.  
+The system loads Sanskrit text files, preprocesses them, splits them into smaller chunks, creates embeddings, stores them in a FAISS vector index, retrieves relevant chunks for a user query, and returns an answer based on the retrieved context.
+
+The project is designed to be simple, modular, and easy to explain.
+
+---
+
+## Objective
+The objective of this project is to build an end-to-end Sanskrit document question-answering system that:
+
+- works on CPU only
+- ingests Sanskrit text documents
+- retrieves relevant document chunks for a given query
+- provides an answer based on the retrieved context
+
+---
+
+## Features
+- Loads Sanskrit `.txt` documents from the `data/` folder
+- Cleans and preprocesses the text
+- Splits documents into smaller chunks
+- Creates multilingual embeddings using Sentence Transformers
+- Stores embeddings in a FAISS vector database
+- Retrieves top relevant chunks for a query
+- Uses a lightweight answer generation / extractive fallback pipeline
+- Runs fully on CPU
+
+---
+
+## Project Structure
+
+```text
 RAG_Sanskrit_Aarya/
 │
 ├── code/
@@ -64,7 +99,9 @@ RAG_Sanskrit_Aarya/
 └── .gitignore
 
 
---Technologies Used
+---
+
+## Technologies Used
 Python
 LangChain
 FAISS
@@ -73,7 +110,10 @@ Hugging Face Transformers
 mT5-small
 VS Code
 
---Models Used:
+
+
+
+## Models Used:
 1. Embedding Model
 
 sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
@@ -94,7 +134,7 @@ If the generator output is weak or unusable, the system uses a simple extractive
 
 ------
 
-How the System Works:
+## How the System Works:
 Step 1: Document Loading
 
 The system reads Sanskrit .txt files from the data/ folder.
@@ -134,7 +174,11 @@ Step 7: Answer Generation
 The system tries to generate an answer using the generator model.
 If the generated answer is weak, it uses extractive fallback from the retrieved context.
 
-Installation and Setup
+
+---
+
+
+## Installation and Setup
 1. Clone or download the project
 
 Place the project folder on your system.
@@ -154,7 +198,13 @@ pip install -r requirements.txt
 If required, also install:
 
 pip install sentencepiece protobuf
-How to Run the Project
+
+
+---
+
+
+## How to Run the Project
+
 Step 1: Build the FAISS index
 
 Run:
@@ -181,7 +231,12 @@ python code/app.py
 
 Then enter your question when prompted.
 
-Example Queries
+
+---
+
+
+
+## Example Queries
 
 You can test with queries like:
 
@@ -204,7 +259,12 @@ Output
 
 The answer is generated from the retrieved context or extracted from it.
 
-Important Files
+
+---
+
+
+## Important Files
+
 config.py
 
 Stores settings such as:
@@ -273,7 +333,12 @@ retrieves chunks
 
 returns final answer
 
-Current Limitations
+
+---
+
+
+
+## Current Limitations
 
 The generator model is lightweight and CPU-friendly, so answer quality is not always perfect
 
@@ -285,7 +350,12 @@ Retrieval is good, but top retrieved chunks may sometimes include less relevant 
 
 Transliteration support is not separately implemented as a dedicated module
 
-Future Improvements
+
+---
+
+
+
+## Future Improvements
 
 use a stronger Sanskrit-aware or multilingual QA model
 
@@ -299,7 +369,19 @@ add a web interface using Streamlit
 
 support more Sanskrit documents and larger corpora
 
-Conclusion
+
+---
+
+
+
+## Conclusion
 
 This project successfully implements a CPU-only Sanskrit RAG pipeline using document retrieval, FAISS indexing, multilingual embeddings, and lightweight answer generation with extractive fallback.
 The system is modular, functional, and suitable as a beginner-friendly implementation of a Sanskrit document QA system.
+
+
+
+
+## Author
+
+Aarya Katulwar
