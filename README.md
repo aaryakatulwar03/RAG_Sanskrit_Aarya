@@ -64,7 +64,9 @@ RAG_Sanskrit_Aarya/
 ├── requirements.txt
 └── .gitignore
 
-Technologies Used
+
+
+--Technologies Used
 
 Python
 
@@ -80,7 +82,8 @@ mT5-small
 
 VS Code
 
-Models Used
+--Models Used
+
 Embedding Model
 
 sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
@@ -107,7 +110,8 @@ Answer Fallback
 
 If the generator output is weak or unusable, the system uses a simple extractive fallback approach to return the most relevant sentence from the retrieved context.
 
-How the System Works
+--How the System Works
+
 Step 1: Document Loading
 
 The system reads Sanskrit .txt files from the data/ folder.
